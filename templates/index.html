@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postpartum Depression Prediction</title>
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f8fc;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .container {
+            margin-top: 60px;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: 500;
+            color: #555;
+        }
+        .form-select, .btn {
+            border-radius: 8px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: 600;
+            width: 100%;
+            padding: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .prediction {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        .low-risk {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .high-risk {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Postpartum Depression Prediction</h2>
+        <form action="/predict" method="post">
+            <div class="mb-4">
+                <label for="age" class="form-label">Age Group:</label>
+                <select name="age" id="age" class="form-select" required>
+                    <option value="0">18-25</option>
+                    <option value="1">26-30</option>
+                    <option value="2">31-35</option>
+                    <option value="3">36-40</option>
+                    <option value="4">41-45</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="feeling_sad" class="form-label">Feeling sad or tearful:</label>
+                <select name="feeling_sad" id="feeling_sad" class="form-select" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="irritable" class="form-label">Irritable towards baby & partner:</label>
+                <select name="irritable" id="irritable" class="form-select" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="trouble_sleeping" class="form-label">Trouble sleeping at night:</label>
+                <select name="trouble_sleeping" id="trouble_sleeping" class="form-select" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="feeling_anxious" class="form-label">Feeling anxious:</label>
+                <select name="feeling_anxious" id="feeling_anxious" class="form-select" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="bonding_problems" class="form-label">Problems bonding with the baby:</label>
+                <select name="bonding_problems" id="bonding_problems" class="form-select" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="prediction {% if 'Low risk' in prediction %}low-risk{% else %}high-risk{% endif %}">
+            {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>Developed with ❤️ by <a href="#">Nishtha Gupta</a>.</p>
+    </footer>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
