@@ -4,7 +4,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Load the best model (assuming it's Random Forest)
+# Load the best model 
 model = joblib.load("C:/Users/NISHTHA GUPTA/OneDrive/Desktop/Postpartum Depression/random_forest_model.pkl")
 
 @app.route('/')
