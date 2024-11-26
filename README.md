@@ -44,13 +44,13 @@ Now, open your browser and navigate to `http://127.0.0.1:5000/` to see the app i
 ## **How to Use** 🤔
 **Fill out the form with the following details**:
 
-Age Group 👶 \
-Feeling sad or tearful? 😢 \
-Irritable towards baby & partner? 😡 \
-Trouble sleeping at night? 🌙 \
-Feeling anxious? 😟 \
-Problems bonding with the baby? 💞 \
-Click Predict and get your result! 💫 
+Age Group  \
+Feeling sad or tearful?  \
+Irritable towards baby & partner?  \
+Trouble sleeping at night?  \
+Feeling anxious?  \
+Problems bonding with the baby?  \
+Click Predict and get your result!  
 
 View your prediction with the risk assessment—either Low Risk or High Risk—along with the confidence level. 🎯
 
